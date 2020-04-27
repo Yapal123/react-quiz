@@ -16,17 +16,41 @@ class Test extends React.Component {
 
 	render() {
 		const radioArr = this.props.radios;
-		const radio = radioArr.map((el, index) =>
-			<div className="form-check form-check-inline" key={index.toString()}>
-
-
-				<input type="radio" value={el.pts} name="questions" onChange={this.change} className="form-check-input" id={index} />
-
-				<label className="form-check-label" htmlFor={index}>{el.answ}
+		const radio = radioArr.map((el, index) =>{
+			if (el.pts == this.props.answ) {
+				return (
+				<div className="form-check form-check-inline" key={index.toString()}>
+				<input
+					type="radio"
+					value={el.pts}
+					name="questions"
+					onChange={this.change}
+					className="form-check-input"
+					id={index}
+					checked='1'
+				/>
+				<label className="form-check-label" htmlFor={index}>
+					{el.answ}
 				</label>
-
-
-			</div>
+				</div>
+				);	
+			}else 
+				return (
+				<div className="form-check form-check-inline" key={index.toString()}>
+				<input
+					type="radio"
+					value={el.pts}
+					name="questions"
+					onChange={this.change}
+					className="form-check-input"
+					id={index}
+				/>
+				<label className="form-check-label" htmlFor={index}>
+					{el.answ}
+				</label>
+				</div>
+				);
+			}
 		);
 		console.log(this.props.radios);
 		return (

@@ -1,3 +1,4 @@
+
 #root {
   width: 1024px;
   margin: 0 auto;
@@ -32,7 +33,9 @@ h3 {
 }
 
 #quizBlock {
-  width: 100%;
+    width: 100%;
+    position: relative;
+    top: 10%;
 }
 
 .wrapper_quest {
@@ -144,4 +147,31 @@ ul {
 
 .show {
   display: block;
+}
+
+.question-wrapper,
+.start-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 80%;
+  width: 100%;
+}
+
+.start-text{
+    position: relative;
+    top: 15%;
+}
+
+.input-group{
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 2%;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
